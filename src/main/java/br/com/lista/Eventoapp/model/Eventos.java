@@ -28,26 +28,34 @@ public class Eventos implements Serializable {
 	
 	
 	
-	private String name;
+	private String nome;
+	private String telefone;
 	private String Local;
 	private String data;
-	public long getCodigo() {
-		
-		
-		 
-		return codigo;
+	private String horario;
 	
+	
+	
+	
+	public long getCodigo() {
+		return codigo;
 	}
 	public void setCodigo(long codigo) {
 		this.codigo = codigo;
 	}
-	private String Horario;
-
-	public String getName() {
-		return name;
+	public String getNome() {
+		return nome;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setNome(String nome) {
+		this.nome = nome;
+		
+	}
+	
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 	public String getLocal() {
 		return Local;
@@ -62,12 +70,10 @@ public class Eventos implements Serializable {
 		this.data = data;
 	}
 	public String getHorario() {
-		return Horario;
+		return horario;
 	}
 	public void setHorario(String horario) {
-		Horario = horario;
-		
+		this.horario = horario;
 	}
 	
- 
 }

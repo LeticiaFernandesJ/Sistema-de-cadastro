@@ -1,4 +1,4 @@
-package com.Evento.Repository;
+package br.com.lista.Eventoapp.Evento.Repository;
 
 
 
@@ -9,7 +9,7 @@ import br.com.lista.Eventoapp.model.Eventos;
 
 @Repository
 public interface EventoRepository extends CrudRepository < Eventos, String> {
-	
+	Eventos findByCodigo(long codigo);
 	
 		
 	
