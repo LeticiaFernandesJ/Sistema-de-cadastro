@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<title>Lista de vacinas</title>
+	<!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+       <meta charset="utf-8"/> 
+      <link rel="stylesheet" href="Style/StyleCss.css"/>
+</head>
+
+
+
+<body>
+
+<header>
+		<nav class="menu">
+		    <div class="nav-wrapper red accent-4">
+		      <a href="#" class="brand-logo">Cadastro de vacina</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		      </ul>
+		    </div>
+		</nav>
+	
+	</header>
+
+
+
+
+
+
+ 
+
+<div class="container login">
+	
+	 <th:block th:include="mensagemValidacao"></th:block>
+	
+	<form class="container" method="POST">
+	<div class="row">
+	    <div class="input-field col s12">
+	           <i class="material-icons prefix">alternate_email</i>
+		       <input type="email" value="" name="Login" class="validate" data-length="50" required />
+		       <label for="first_name">Digite seu email</label>
+		        <span class="helper-text" data-error="wrong" data-success="right"> </span>
+		</div>
+		</div>		
+		<div class="row">
+	      </div>
+		 <div class="input-field col s6">  
+		      <i class="material-icons prefix">lock</i>
+		       <input type="password" value="" name="senha" class="validate" data-length="11" required/>
+		       <label for="first_name">Escolha sua senha</label>
+		</div>
+		<div>
+		    <button class="waves-effect waves-light btn 90caf9 a5f5 blue lighten-1" type="submit"><span class="material-icons">launch</span>Entrar</button>
+		  </div>
+		  </form>
+		</div>
+		<form class="center" method="POST">
+	               <div class="row">
+		  <div>
+		                    <p>Ainda não possuo o cadastro</p>
+		       <a href="/cadastrarDados" class="waves-effect waves-light btn a5f5 blue lighten-1"><i class="material-icons right">add_circle_outline</i>Realizar cadastro</a>
+      
+		   </div>
+		   </div>
+		</form>
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+
+
+</html>

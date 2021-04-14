@@ -1,0 +1,43 @@
+ .class="container" method="POST
+input:invalid {
+  border: 2px dashed red;
+}
+
+input:valid {
+  border: 2px solid black;
+}
+
+.Listadevacinas{
+	
+}
+
+.detalheEventos{
+	box-shadow: 0px 0px 5px #90caf9;
+	padding-top: 30px;
+	padding-left: 30px;
+	margin-bottom: 70px;
+}
+
+.FormEventos{
+	box-shadow: 0px 0px 5px #90caf9;
+	padding-top: 70px;
+	padding-left: 70px;
+	padding-bottom: 70px;
+	
+}
+
+body {
+ background-color: #fafafa;
+}
+
+.login{
+	box-shadow: 0px 0px 5px #90caf9;
+	padding-top: 50px;
+	padding-left: 10px;
+	margin-bottom: 30px;
+	
+}
+	
+	
+
+}

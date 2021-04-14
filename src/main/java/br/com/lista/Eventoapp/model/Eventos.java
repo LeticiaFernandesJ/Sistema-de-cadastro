@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.validation.constraints.NotEmpty;
 
 import org.springframework.stereotype.Service;
 
@@ -27,16 +27,43 @@ public class Eventos implements Serializable {
 	private long codigo;
 	
 	
-	
+	@NotEmpty
 	private String nome;
+	
+	
+	@NotEmpty
 	private String telefone;
+	
+	@NotEmpty
 	private String Local;
+	
+	@NotEmpty
 	private String data;
+	
+	@NotEmpty
 	private String horario;
 	
 	
+	@NotEmpty
+	private String email;
+	
+	@NotEmpty
+	private String senha;
 	
 	
+		
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getSenha() {
+		return senha;
+	}
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 	public long getCodigo() {
 		return codigo;
 	}

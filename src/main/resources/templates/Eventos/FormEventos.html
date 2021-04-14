@@ -11,9 +11,11 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
        <meta charset="utf-8"/> 
-      <link rel="stylesheet" href="style/styleCss.css"/>
+      <link rel="stylesheet" href="Style/StyleCss.css"/>
 </head>
 <body>
+
+
 
 	<header>
 		<nav class="menu">
@@ -28,33 +30,64 @@
 	</header>
 	
 	
+	
 
 	<div class="container FormEventos">
 	
+	 <th:block th:include="mensagemValidacao"></th:block>
+	
 	<form class="container" method="POST">
-	  <div class="row">
-	    <div class="input-field col s9">
-		Nome Completo: <input type="text" value="" name="nome"/>
+	<div class="row">
+	    <div class="input-field col s8">
+	           <i class="material-icons prefix">alternate_email</i>
+		       <input type="email" value="" name="email" class="validate" data-length="50" required />
+		       <label for="first_name">Digite seu email</label>
+		        <span class="helper-text" data-error="wrong" data-success="right"> </span>
+		</div>		
+		 <div class="input-field col s4">  
+		      <i class="material-icons prefix">lock</i>
+		       <input type="password" value="" name="senha" class="validate" data-length="11" required/>
+		       <label for="first_name">Escolha sua senha</label>
 		</div>
-		 <div class="input-field col s3">
-		Telefone:: <input type="tel" value="" name="telefone"/>
+		</div>
+	  <div class="row">
+	    <div class="input-field col s8">
+	           <i class="material-icons prefix">account_circle</i>
+		       <input type="text" value="" name="nome" class="validate" data-length="50" required />
+		       <label for="first_name">Nome completo</label>
+		        <span class="helper-text" data-error="wrong" data-success="right"> </span>
+		</div>
+	   <div>
+           </div>
+		 <div class="input-field col s4">
+		      <i class="material-icons prefix">phone</i>
+		       <input type="number" value="" name="telefone" class="validate" data-length="11" required/>
+		       <label for="first_name">Número para contato</label>
 		</div>
 		</div>		
 		<div class="row">
 			<div class="input-field col s6">
-				Local: <input type="text" value="" name="local"/>
+			      <i class="material-icons prefix">location_on</i>
+				 <input type="text" value="" name="Local" class="validate" required />
+		 <label for="first_name">Endereço completo</label>
 			</div>
 			<div class="input-field col s3">
-				Data de nascimento: <input type="date" value="" name="data"/>
+			      <i class="material-icons prefix">date_range</i>
+				 <input type="date" value="" name="data" class="validate" required/>
+		         <label for="first_name">Data de nascimento</label>
 			</div>
 			<div class="input-field col s3">
-				Horario: <input type="time" value="" name="horario"/>
+			       <i class="material-icons prefix">timer</i>
+				 <input type="time" value="" name="horario" class="validate" required/>
+		 <label for="first_name">Horario de preferência</label>
 			</div>
 		</div>
-		<button class="waves-effect waves-light btn 90caf9 a5f5 blue lighten-1" type="submit">Salvar</button>
-	
+		<div >
+		    <button  class="waves-effect waves-light btn 90caf9 a5f5 blue lighten-1" type="submit">Salvar</button>
+		  </div>
 	</form>
 	</div>
+	
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 </body>

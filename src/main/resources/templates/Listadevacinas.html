@@ -2,7 +2,7 @@
 <html xmlns:th="http://thymeleaf.org"
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" >
 <head>
-	<title>detalhes da vacina</title>
+	<title>Lista de vacinas</title>
 	 <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
       <!--Import materialize.css-->
@@ -11,25 +11,24 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <meta charset="utf-8"/> 
-      <link rel="stylesheet" href="Style/StyleCss.css"/>
 </head>
 <body>
 	
 	<header>
 		<nav class="menu">
 		    <div class="nav-wrapper red accent-4"> 
-		      <a href="#" class="brand-logo ">Detalhe da vacina</a>
+		      <a href="#" class="brand-logo ">Lista de vacinas</a>
 		      <ul id="nav-mobile" class="right hide-on-med-and-down">
-		        <li><a href="/Listadevacinas" class="waves-effect waves-light btn a5f5 blue lighten-1"><i class="material-icons left">add_circle_outline</i>Lista de vacinas</a></li>
+		        <li><a href="/Sistemadecadastros" class="waves-effect waves-light btn a5f5 blue lighten-1"><i class="material-icons left">add_circle_outline</i>Sistema de casdatros</a></li>
 		      </ul>
 		    </div>
 		</nav>
 	 
 	</header>
 	
-	<h4>Consulte as informações sobre seu cadastro de vacinação</h4>
+	<h4>Sistema para cadastro de vacina!</h4>
 	
-
+	<h5>Realize seu login e faça seu cadastro!</h5>
 	
 	
 	<table class="container Index">
@@ -38,29 +37,25 @@
 				<th>Nome</th>
 				<th>Telefone</th>
 				<th>Local</th>
-				<th>Data de nasimento</th>
+				<th>Data de nascimento</th>
 				<th>Horario</th>
 				<th>Deletar</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr th:each="Evento : ${Eventos}">
-				<td><span th:text="${Evento.nome}"></span></td>
+				<td><a th:href="${(#mvc.url('EC#detalheEventos').arg(0, Evento.codigo)).build()}"><span th:text="${Evento.nome}"></span></a></td>
 				<td><span th:text="${Evento.telefone}"></span></td>
-				<td><span th:text="${Evento.Local}"></span></td>
+				<td><span th:text="${Evento.local}"></span></td>
 				<td><span th:text="${Evento.data}"></span></td>
 				<td><span th:text="${Evento.horario}"></span></td>
 				<td><a class="waves-effect waves-light btn-small a5f5 blue lighten-1" th:href="${(#mvc.url('EC#deletarDados').arg(0, Evento.codigo)).build()}"><i class="material-icons left ">delete</i></a></td>
 			</tr>
 		</tbody>
+	
 	</table>
   
-  
-  
- 
-  
-  
- 
+
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 

@@ -1,15 +1,20 @@
 package br.com.lista.Eventoapp;
 
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.lista.Eventoapp.Evento.Repository.EventoRepository;
 import br.com.lista.Eventoapp.model.Eventos;
+import br.com.lista.Eventoapp.model.Login;
 
 
 @Controller
@@ -17,7 +22,8 @@ public class EventoController {
 	
 	@Autowired
 	private EventoRepository er;
-
+	
+	
 	
 	@RequestMapping("/Sistemadecadastros")
 	public String index(){
@@ -30,11 +36,17 @@ public class EventoController {
 	}
 	
 	@RequestMapping(value="/cadastrarDados", method=RequestMethod.POST)
-	public  String form( Eventos Eventos ){
+	public  String form(@Valid Eventos Eventos, BindingResult result, RedirectAttributes attributes){
+		if(result.hasErrors()){
+			attributes.addFlashAttribute("mensagem", "Verifique os campos!");
+			return "redirect:/cadastrarDados";
+		
+		}
 		er.save(Eventos);
-		return "redirect:/Listadevacinas"; 
+		attributes.addFlashAttribute("mensagem", "Cadastrado realizado com sucesso!");
+		return "redirect:/cadastrarDados";
+		
 	}
-
 	@RequestMapping("/Listadevacinas")
 	public ModelAndView Listadevacinas(){
 		ModelAndView mv = new ModelAndView("Listadevacinas");
@@ -56,13 +68,26 @@ public class EventoController {
 	
 	
 	
+	
 	@RequestMapping("/deletarDados")
 	public String deletarDados(long codigo){
 		Eventos Eventos = er.findByCodigo(codigo);
 		er.delete(Eventos);
 		return "redirect:/Listadevacinas";
 	}
-	}
 
 	
+
+
+
+                @RequestMapping("/login")
+                 public String login(){
+	               return "Index";}
+
+
+            @RequestMapping(value="/login", method=RequestMethod.GET)
+                 public String login( Login login){
+	             return "Eventos/login";
+}
 	
+}
